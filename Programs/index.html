@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='format-detection' content='telephone=no,address=no,email=no'>
+    <meta name='viewport' content='width=device-width,user-scalable=no,maximum-scale=1,viewport-fit=cover'>
+    <base href='http://onbu.starfree.jp'>
+    <link rel='stylesheet' href='../resources/css/style.css'>
+
+    <title>演目紹介 - 民族舞踊団音舞</title>
+</head>
+
+<body ontouchend onload='getJson();'>
+    <!-- HEADER -->
+    <header class='sub-header sub-programs'>
+    </header>
+
+    <div class='ie'>
+        Internet Explorer はサポート対象外です。 <br>
+        Microsoft Edge をご使用ください。
+    </div>
+
+    <main>
+        <nav>
+            <input type='checkbox' class='btn' id='checked'>
+            <label class='menu-btn' for='checked'>
+                <span class='hum top'></span>
+                <span class='hum middle'></span>
+                <span class='hum bottom'></span>
+            </label>
+
+            <div class='nav'>
+                <a href='index.html'><div class='logo'></div></a>
+                <div class='wrapper header-wrapper'>
+                    <a href='About/index.html' class='nav-text header-nav'>音舞とは</a>
+                    <a href='Programs/index.html' class='nav-text header-nav'>演目紹介</a>
+                    <a href='Performances/index.html' class='nav-text header-nav'>舞台紹介</a>
+                    <a href='Link/index.html' class='nav-text header-nav'>リンク</a>
+                    <a href='Contact/index.html' class='nav-text header-nav'>お問い合わせ</a>
+                </div>
+                <a href='OBOG/index.html' class='nav-text header-nav obog'>団員 OBOG</a>
+                <div class='nav-sns'>
+                    <a href='https://twitter.com/onb_u' class='nav-twitter icon'></a>
+                    <a href='https://www.facebook.com/minzokuonbu/' class='nav-facebook icon'></a>
+                    <a href='https://www.instagram.com/onsta__gram/' class='nav-instagram icon'></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class='sub-board'>
+            <div class='title'>演目紹介</div>
+            <p class='sub-text'>音舞で踊っている演目です。色々な地域の舞踊や太鼓があります。</p>
+        </div>
+
+        <div class='programs-wrapper'>
+            <div class='local-wrapper'>
+                <div class='local-title'>北海道</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card soran' onclick='details(this);'><div class='exp'>ソーラン節</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>東北地方</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card jongara' onclick='details(this);'><div class='exp'>津軽じょんがら節</div></div>
+                    <div class='image_card arauma' onclick='details(this);'><div class='exp'>荒馬</div></div>
+                    <div class='image_card obako' onclick='details(this);'><div class='exp'>秋田おばこ</div></div>
+                    <div class='image_card akita' onclick='details(this);'><div class='exp'>秋田音頭</div></div>
+                    <div class='image_card kenbai' onclick='details(this);'><div class='exp'>鬼剣舞</div></div>
+                    <div class='image_card sansa' onclick='details(this);'><div class='exp'>さんさ踊り</div></div>
+                    <div class='image_card yoshare' onclick='details(this);'><div class='exp'>南部よしゃれ</div></div>
+                    <div class='image_card kagura' onclick='details(this);'><div class='exp'>御神楽</div></div>
+                    <div class='image_card haneko' onclick='details(this);'><div class='exp'>はねこ踊り</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>関東地方</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card momi' onclick='details(this);'><div class='exp'>もみ太鼓</div></div>
+                    <div class='image_card yagibushi' onclick='details(this);'><div class='exp'>八木節音頭</div></div>
+                    <div class='image_card yatai' onclick='details(this);'><div class='exp'>秩父屋台囃子</div></div>
+                    <div class='image_card hachijou' onclick='details(this);'><div class='exp'>八丈島太鼓</div></div>
+                    <div class='image_card misaki' onclick='details(this);'><div class='exp'>三崎のぶち合わせ太鼓</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>中部地方</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card kodaijin' onclick='details(this);'><div class='exp'>古代神</div></div>
+                    <div class='image_card kiriko' onclick='details(this);'><div class='exp'>切籠太鼓</div></div>
+                    <div class='image_card goji' onclick='details(this);'><div class='exp'>御陣乗太鼓</div></div>
+                    <div class='image_card gamine' onclick='details(this);'><div class='exp'>霧ヶ峰雷神</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>中国地方</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card dengaku' onclick='details(this);'><div class='exp'>田楽</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>九州地方</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card haiya' onclick='details(this);'><div class='exp'>牛深ハイヤ節</div></div>
+                    <div class='image_card take' onclick='details(this);'><div class='exp'>竹踊り</div></div>
+                </div>
+            </div>
+            <div class='local-wrapper'>
+                <div class='local-title'>沖縄</div>
+                <div class='image_card-wrapper'>
+                    <div class='image_card kunjan' onclick='details(this);'><div class='exp'>国頭さばくい</div></div>
+                </div>
+            </div>
+        </div>
+
+<!--         <div id='soran' class='board-wrapper'>
+            <div class='board-img preformances'></div>
+            <div class='board'>
+                <div class='title'>ソーラン節</div>
+                <p class='text'>ソーラン節は本来「沖揚音頭」と呼ばれる作業歌で、鰊漁のそれぞれの作業を唄った、船漕ぎ音頭、網起こし音頭、切声音頭、沖揚げ音頭のうち最後の沖揚げ音頭で、捕った魚を船から運搬用の船に引き上げるというもっとも激しい作業を表したものです。 <br>
+                直径１メートル以上もある太くて重いタモ網を、卵を網に付けられる前に短時間でやらなくてはいけない重労働なのです。 <br>
+                発祥は積丹半島の古平ですが現在は鰊漁をおこなっていません。ソーラン節の名前が広まっていく頃に衰退していったそうです。</p>
+                <div class='grad'>
+                    <input id='trigger1' class='grad-trigger' type='checkbox'>
+                    <label class='grad-btn' for='trigger1'></label>
+                    <div class='grad-item'>
+                        <h1>ソーラン節の魅力</h1>
+                        <p class='text'>マイムの動きがかっこいい。力強い海の男になりきることができます。 <br>
+                        男は度胸！女も度胸！ <br><br>
+                        声が命のエネルギーあふれる踊りです。<br>
+                        ふりがそろうとき一体感を感じることができる素晴らしい踊りです。<br><br>
+                        踊り手を船の船員と例えるなら、太鼓は船や波に例えられます。<br>
+                        どっしりと構えて太鼓を打つことができます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+    </main>
+
+    <div id='details_back' onclick='hide();' class='details-back'></div>
+    <div id='details' class='details'>
+        <div class='board-wrapper'>
+            <div id='img' class='board-img'>
+                <div class='close'  onclick='hide();'></div>
+            </div>
+            <div id='exp' class='sub-board'></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class='list'>
+            <div class='sns'>
+                <a href='https://twitter.com/onb_u' class='twitter icon'></a>
+                <a href='https://www.facebook.com/minzokuonbu/' class='facebook icon'></a>
+                <a href='https://www.instagram.com/onsta__gram/' class='instagram icon'></a>
+            </div>
+            <div class='wrapper footer-wrapper'>
+                <a href='index.html' class='nav-text footer-nav'>ホーム</a>
+                <a href='About/index.html' class='nav-text footer-nav'>音舞とは</a>
+                <a href='Programs/index.html' class='nav-text footer-nav'>演目紹介</a>
+                <a href='Performances/index.html' class='nav-text footer-nav'>舞台紹介</a>
+                <a href='Link/index.html' class='nav-text footer-nav'>リンク</a>
+                <a href='Contact/index.html' class='nav-text footer-nav'>お問い合わせ</a>
+                <a href='OBOG/index.html' class='nav-text footer-nav'>団員 OBOG へ</a>
+                <div class='copyright'>© 2020 民族舞踊団音舞</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script type='text/javascript' charset='utf-8' async defer>
+
+    var globalData;
+
+    function $( e ) { return document.getElementById( e ); };
+
+    function getJson() {
+
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function () {
+            if ( xmlhttp.readyState == 4 ) {
+                if ( xmlhttp.status == 200 ) {
+
+                    globalData = JSON.parse( xmlhttp.responseText );
+
+                }
+            }
+        }
+
+        xmlhttp.open( "GET", "../resources/data.json" );
+        xmlhttp.send();
+
+    };
+
+    function details( data ) {
+
+        var getId = data.classList[1];
+
+        $( "img" ).className = "board-img";
+
+        var match = globalData.filter( function( item, index ) {
+            if ( item.id == getId ) return true;
+        } );
+
+        var title = "<div class='title'><div class='sub-title'>" + match[0].place + "</div>" + match[0].name + "</div>";
+
+        $( "details_back" ).classList.toggle( "active" );
+        $( "details" ).classList.toggle( "active" );
+        $( "details" ).scrollTop = 0;
+        $( "img" ).classList.toggle( match[0].id );
+        $( "exp" ).innerHTML = title + match[0].explanation;
+        document.body.style.overflow = "hidden";
+
+    }
+
+    function hide() {
+
+        $( "details_back" ).classList.remove( "active" );
+        $( "details" ).classList.remove( "active" );
+        document.body.style.overflow = "";
+
+    }
+
+</script>
+
+</html>
