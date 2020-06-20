@@ -1,0 +1,288 @@
+*:not( input ) {
+    margin: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+body {
+    position: relative;
+
+    font-family: YuMincho, "游明朝体", "YuMincho", "游明朝", "Yu Mincho", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro W3", "Times New Roman", HGS明朝E, メイリオ, Meiryo, serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    background: url( ../images/bg-texture.jpg );
+}
+
+.btn {
+    display: none;
+}
+.menu-btn {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+
+    background-color: #000;
+}
+.hum {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    width: 32px;
+    height: 1px;
+
+    background: #fff;
+
+    transition: .4s ease;
+}
+.middle {
+    background: none;
+}
+.middle:before,
+.middle:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    width: 32px;
+    height: 1px;
+
+    background: #fff;
+
+    transform: rotate( 0 );
+    transition: .4s ease;
+}
+.bottom {
+    top: 40px;
+}
+
+.btn:checked ~ .menu-btn .hum.top {
+    transform: translateY( 12px ) scale( 0 );
+}
+.btn:checked ~ .menu-btn .hum.middle:before {
+    transform: rotate( 45deg );
+    transition: .6s cubic-bezier( .18, .89, .32, 1.28 );
+}
+.btn:checked ~ .menu-btn .hum.middle:after {
+    transform: rotate( -45deg );
+    transition: .6s cubic-bezier( .18, .89, .32, 1.28 );
+}
+.btn:checked ~ .menu-btn .hum.bottom {
+    transform: translateY( -12px ) scale( 0 );
+}
+
+.nav {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    width: 100vw;
+    height: 360px;
+
+    background-color: #000;
+    opacity: 0;
+    transition: .4s cubic-bezier( .4, 0, .2, 1 );
+    transform: translateY( -360px );
+}
+.btn:checked ~ .nav {
+    opacity: 1;
+    box-shadow: 0 16px 32px 4px #0002;
+    transform: translateY( 0 );
+}
+
+#header {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+#header::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: url( ../images/back.jpg ) center center / cover no-repeat fixed;
+    overflow: hidden;
+    z-index: -1;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+    -webkit-mask-image: -webkit-linear-gradient( top, transparent 50vh, rgba( 0, 0, 0, .4 ) );
+}
+.logo-sub {
+    position: absolute;
+    z-index: 2;
+    top: calc( 38vh - 12vw );
+    left: 50vw;
+    width: 10vw;
+    height: calc( 10vw * 0.2 );
+
+    background: url( ../images/logo_sub.png );
+    background-size: 10vw calc( 10vw * 0.2 );
+
+    opacity: 0;
+    animation: logo-sub_appear .5s cubic-bezier( .4, 0, .2, 1 ) .3s forwards;
+}
+.logo {
+    position: absolute;
+    top: calc( 33vh - 25vw * 0.5 );
+    left: 50vw;
+    width: 25vw;
+    height: 25vw;
+
+    background: url( ../images/logo.png );
+    background-size: 25vw 25vw;
+
+    opacity: 0;
+    animation: logo_appear .6s cubic-bezier( .4, 0, .2, 1 ) .2s forwards;
+}
+.logo-t {
+    position: absolute;
+    z-index: 2;
+    top: calc( 33vh + 6vw );
+    left: 50vw;
+    width: 16vw;
+    height: calc( 16vw * 0.35 );
+
+    background: url( ../images/logo_t.png );
+    background-size: 16vw calc( 16vw * 0.35 );
+
+    opacity: 0;
+    animation: logo-t_appear .6s cubic-bezier( .4, 0, .2, 1 ) .4s forwards;
+}
+
+.info {
+    position: absolute;
+    top: calc( 75vh - 20vw * 0.25 );
+    left: 50vw;
+    width: 20vw;
+    height: calc( 20vw * 0.51 );
+
+    background: url( ../images/info.png );
+    background-size: 20vw calc( 20vw * 0.51 );
+
+    opacity: 0;
+    transform: translateX( -50% );
+    animation: info_appear .8s ease .6s forwards;
+}
+.scroll {
+    position: absolute;
+    top: calc( 90vh );
+    left: 50vw;
+    width: 64px;
+    height: 64px;
+
+    opacity: 0;
+    transform: translateX( -50% );
+    animation: slide 2.4s linear  1.2s infinite;
+}
+.scroll::before,
+.scroll::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 32px;
+    height: 1px;
+
+    background: #fff;
+
+    transform: rotate( 45deg );
+}
+.scroll::after {
+    right: 5px;
+    left: unset;
+    transform: rotate( -45deg );
+}
+
+#details {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media screen and ( orientation: portrait ) {
+
+.logo {
+    top: calc( 25vh - 30vh * .25 );
+    width: 30vh;
+    height: 30vh;
+
+    background-size: 30vh 30vh;
+}
+.info {
+    top: calc( 80vh - 30vh * .25 );
+    width: 30vh;
+    height: calc( 30vh * 0.51 );
+
+    background-size: 30vh calc( 30vh * .51 );
+}
+
+
+}
+
+
+@keyframes logo_appear {
+    0% {
+        transform: translateX( -50% ) scale( 1.4 );
+        opacity: 0;
+    }
+    100% {
+        transform: translateX( -50% ) scale( 1 );
+        opacity: 1;
+    }
+}
+@keyframes logo-sub_appear {
+    0% {
+        transform: translateX( -190% );
+        opacity: 0;
+    }
+    100% {
+        transform: translateX( -160% );
+        opacity: 1;
+    }
+}
+@keyframes logo-t_appear {
+    0% {
+        transform: translateX( 70% );
+        opacity: 0;
+    }
+    100% {
+        transform: translateX( 40% );
+        opacity: 1;
+    }
+}
+@keyframes info_appear {
+    0% {
+        transform: translate( -50%, 5% );
+        opacity: 0;
+    }
+    100% {
+        transform: translate( -50%, 0 );
+        opacity: 1;
+    }
+}
+@keyframes slide {
+    0%, 10% {
+        transform: translate( -50%, 0 );
+        opacity: 0;
+    }
+    40%, 60% {
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: translate( -50%, 36px );
+        opacity: 0;
+    }
+}
